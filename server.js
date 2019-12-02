@@ -4,7 +4,7 @@ var app = express();
 var server = http.Server(app);
 var bodyParser = require('body-parser')
 //var mongo = require('mongodb')
-var db, uri = "mongodb+srv://yaminkhan017:@Yamin287232@cluster0-95fpq.mongodb.net/test?retryWrites=true&w=majority"
+var db, uri = "mongodb+srv://Ashraf:daredevils@cluster0-h5imv.mongodb.net/test?retryWrites=true&w=majority"
 var mongoose = require('mongoose')
 
 mongoose.connect(uri, {useNewUrlParser:true, useUnifiedTopology:true})
@@ -54,7 +54,7 @@ app.post('/submit',function(request,response){
   let article = new Article(request.body)
   article.save(function(err,data){
     if(err){
-          response.status(400).json({msg:"All fiels are require"})
+          response.status(400).json({msg:"All fields are require"})
     }
     response.status(200).json({article:data})
   })
@@ -88,7 +88,7 @@ app.get('/second',function(request,response){
   response.sendFile(__dirname+'/views/second.html')
 })
 app.get('/new',function(request,response){
-  response.sendFile(__dirname+'/views/form.html')
+  response.sendFile(__dirname+'/views/forms.html')
 })
   server.listen(3000, 'localhost', function(){
     console.log('Server running');
