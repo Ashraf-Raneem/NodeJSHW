@@ -1,4 +1,7 @@
 /* Add your script here */
+
+// posting to a local server through AJAX
+
 //task 1
 $("#list").click(function(){
     $.ajax({
